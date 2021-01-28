@@ -1,0 +1,24 @@
+
+<div class="card">
+  <h2>{{title}}</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, quo.</p>
+  <strong>Number {{number}}</strong>
+  <p>{{obj | json}}</p>
+  <p>Info: {{getInfo()}}</p>
+  <div>
+    <img [src]="imUrl">
+    <br>
+    <button [disabled]="disabled" >Enable</button>
+  </div>
+
+  <div class="buttons">
+    <button (click)="changeTitle()">Change title</button>
+    <button (click)="title = 'new title' ">Обновить заголовок</button>
+  </div>
+  <div>
+    <input type="text" (input)="fromInput($event)" [value]="title">
+  </div>
+  <div>
+    <input type="text" #val (input)="title=val.value" [value]="title">
+  </div>
+</div>
